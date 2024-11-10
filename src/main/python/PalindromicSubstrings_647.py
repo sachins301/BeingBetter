@@ -17,3 +17,15 @@ class Solution:
                 l -= 1
                 r += 1
         return res
+
+    #dynamic programming
+    def countSubstrings_dp(self, s: str) -> int:
+        n = len(s)
+        dp = [[False] * n for i in range(n)]
+        res = 0
+        for i in range(n):
+            for j in range(i + 1):
+                if s[i] == s[j] and (i - j + 1 <= 2 or dp[i-1][j+1]):
+                    res += 1
+                    dp[i][j] = True
+        return res
