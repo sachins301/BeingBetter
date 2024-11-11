@@ -14,3 +14,21 @@ class Solution:
             if two > 9 and two < 27:
                 dp[i] += dp[i - 2]
         return dp[n - 1]
+
+    # recursion and memoization
+    def numDecodings_rec(self, s: str) -> int:
+        res = 0
+        dp = {}
+        def dfs(i):
+            if i in dp:
+                return dp[i]
+            if i == len(s):
+                res = 1
+            elif s[i] == '0':
+                res = 0
+            elif int(s[i : i + 2]) > 9 and  int(s[i : i + 2]) < 27:
+                res = dfs(i + 1) + dfs(i + 2)
+            else: res = dfs(i + 1)
+            dp[i] = res
+            return res
+        return dfs(0)

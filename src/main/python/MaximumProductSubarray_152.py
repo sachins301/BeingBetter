@@ -1,6 +1,6 @@
 from typing import List
 
-
+# Kadane's Algorithm
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         currMax, currMin, res = 1, 1, max(nums)
