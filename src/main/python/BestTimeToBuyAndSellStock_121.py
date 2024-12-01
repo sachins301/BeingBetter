@@ -12,3 +12,13 @@ class Solution:
                 buy = sell
             sell += 1
         return res
+
+    # DP
+    def maxProfit(self, prices: List[int]) -> int:
+        buy = float('inf')
+        res = 0
+        for p in prices:
+            if p < buy:
+                buy = p
+            res = max(res, p - buy)
+        return res
