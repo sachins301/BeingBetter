@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List
 
 
@@ -28,3 +29,25 @@ class Solution:
             if not dfs(crs):
                 return []
         return res
+
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        indegree = [0] * numCourses
+        adj = [[] for i in range(numCourses)]
+        for src, dst in prerequisites:
+            indegree[dst] += 1
+            adj[src].append(dst)
+        finish = 0
+        q = deque()
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                q.append(i)
+        order = []
+        while q:
+            node = q.popleft()
+            finish += 1
+            order.append(node)
+            for nei in adj[node]:
+                indegree[nei] -= 1
+                if indegree[nei] == 0:
+                    q.append(nei)
+        return order[::-1] if finish == numCourses else []
