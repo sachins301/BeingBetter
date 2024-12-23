@@ -32,3 +32,16 @@ class Solution:
             dp[i] = res
             return res
         return dfs(0)
+
+    def numDecodings(self, s: str) -> int:
+        tmp = 0
+        one, two = 1, 0
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == "0":
+                tmp = 0
+            else:
+                tmp = one
+            if i + 1 < len(s) and (s[i] == "1" or s[i] == "2" and s[i + 1] in "0123456"):
+                tmp += two
+            tmp, one, two = 0, tmp, one
+        return one
