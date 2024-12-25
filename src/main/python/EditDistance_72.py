@@ -14,3 +14,20 @@ class Solution:
         # for line in dp:
         #     print(line)
         return dp[0][0]
+
+
+    def minDistance(self, word1: str, word2: str) -> int:
+        dp = {}
+        def dfs(i, k):
+            if i == len(word1):
+                return len(word2) - k
+            if k == len(word2):
+                return len(word1) - i
+            if (i, k) in dp:
+                return dp[(i, k)]
+            if word1[i] == word2[k]:
+                dp[(i, k)] = dfs(i + 1, k + 1)
+            else:
+                dp[(i, k)] = min(dfs(i + 1, k), dfs(i, k + 1), dfs(i + 1, k + 1)) + 1
+            return dp[(i, k)]
+        return dfs(0, 0)
