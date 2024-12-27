@@ -12,3 +12,16 @@ class Solution:
                     goal.add(i)
 
         return True if len(goal) == 3 else False
+
+    def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
+        if target in triplets:
+            return True
+        candidates = [0, 0, 0]
+        for x, y, z in triplets:
+            if x > target[0] or y > target[1] or z > target[2]:
+                continue
+            if x == target[0] or y == target[1] or z == target[2]:
+                candidates[0] = max(candidates[0], x)
+                candidates[1] = max(candidates[1], y)
+                candidates[2] = max(candidates[2], z)
+        return candidates == target
