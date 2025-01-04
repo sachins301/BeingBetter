@@ -1,6 +1,8 @@
 from collections import Counter, defaultdict
 from typing import List
 
+import heapq
+
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
@@ -27,3 +29,16 @@ class Solution:
                 if k == 0:
                     return res
         return
+
+    # minheap
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        count = Counter(nums)
+        minheap = []
+        for key, val in count.items():
+            heapq.heappush(minheap, [val, key])
+            if len(minheap) > k:
+                heapq.heappop(minheap)
+        res = []
+        while minheap:
+            res.append(heapq.heappop(minheap)[1])
+        return res
