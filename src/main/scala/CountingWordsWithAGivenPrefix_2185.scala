@@ -7,7 +7,9 @@ object BruteForceSolution {
 }
 
 // Trie Solution
-case class TrieNode(children: Map[Char, TrieNode] = Map.empty, count: Int = 0)
+case class TrieNode(children: Map[Char, TrieNode] = Map.empty, count: Int = 0) {
+    override def equals(that: Any): Boolean = ???
+}
 
 class Trie(val root: TrieNode = TrieNode()){
     def add(word: String, node: TrieNode = root): TrieNode ={
@@ -31,8 +33,9 @@ class Trie(val root: TrieNode = TrieNode()){
     }
 }
 
-object Solution {
+object CountingWordsWithAGivenPrefix_2185 {
     def prefixCount(words: Array[String], pref: String): Int = {
-        words.foldLeft(Trie())((t, word) => new Trie(t.add(word))).count(pref)
+        words.foldLeft(new Trie())((t: Trie, word) => new Trie(t.add(word))).count(pref)
     }
 }
+

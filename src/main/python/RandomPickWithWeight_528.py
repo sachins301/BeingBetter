@@ -19,6 +19,6 @@ class Solution:
                 return i
 
 
-# Your Solution object will be instantiated and called as such:
-# obj = Solution(w)
+# Your MinimumLengthOfStringAfterOpertions_3223 object will be instantiated and called as such:
+# obj = MinimumLengthOfStringAfterOpertions_3223(w)
 # param_1 = obj.pickIndex()

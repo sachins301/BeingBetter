@@ -1,4 +1,4 @@
-object Solution {
+object WordSubsets_916 {
 
   def frequency(word: String): Array[Int] ={
     word.foldLeft(Array.fill(26)(0)){

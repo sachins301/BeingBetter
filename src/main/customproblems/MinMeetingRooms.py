@@ -2,7 +2,7 @@
 1. Interval Scheduling and Overlaps
 Problem: Given a list of meeting time intervals, determine the minimum number of conference rooms required to schedule all meetings.
 
-Solution: To solve this, we can use a sweep line technique by treating meeting start and end times as events. We
+MinimumLengthOfStringAfterOpertions_3223: To solve this, we can use a sweep line technique by treating meeting start and end times as events. We
 increment the room count when a meeting starts and decrement when it ends. The maximum number of overlapping events
 at any point gives the number of rooms required."""
 

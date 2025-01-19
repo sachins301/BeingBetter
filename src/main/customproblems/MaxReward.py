@@ -4,7 +4,7 @@ Optimization and Greedy Algorithm (Task Scheduling)
 Problem: You have multiple tasks with different deadlines and rewards. Maximize the total reward by selecting tasks
 within their respective deadlines.
 
-Solution: Sort tasks by reward and use a greedy algorithm to select the highest reward tasks that can be completed
+MinimumLengthOfStringAfterOpertions_3223: Sort tasks by reward and use a greedy algorithm to select the highest reward tasks that can be completed
 within their deadlines."""
 
 def maxReward(tasks):

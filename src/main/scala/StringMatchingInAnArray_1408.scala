@@ -1,5 +1,5 @@
-object Solution {
-  def stringMatching(words: Array[String]): List[String] = {
+object StringMatchingInAnArray_1408 {
+  def stringMatching1(words: Array[String]): List[String] = {
     var res = List[String]()
     for(i <- words.indices){
       var found = false

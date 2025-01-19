@@ -3,7 +3,7 @@ Sliding Window / Moving Average
 Problem: Given an array of integers, find the maximum sum of any contiguous subarray of length k.
 
 
-Solution: Use the sliding window technique by first summing the first k elements, then sliding the window one element
+MinimumLengthOfStringAfterOpertions_3223: Use the sliding window technique by first summing the first k elements, then sliding the window one element
 at a time while adjusting the sum by subtracting the element that goes out of the window and adding the element that
 comes into the window."""
 

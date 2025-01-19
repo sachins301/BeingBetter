@@ -1,4 +1,4 @@
-object Solution {
+object MinimumLengthOfStringAfterOpertions_3223 {
   def minimumLength(s: String): Int = {
     val counter = s.map(c => (c, 1)).groupBy(_._1).map(x => (x._1, x._2.length))
 
