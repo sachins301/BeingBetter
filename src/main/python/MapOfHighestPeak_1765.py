@@ -1,3 +1,7 @@
+from collections import deque
+from typing import List
+
+
 class Solution:
     def highestPeak(self, isWater: List[List[int]]) -> List[List[int]]:
         ROWS, COLS = len(isWater), len(isWater[0])
